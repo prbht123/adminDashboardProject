@@ -1,0 +1,260 @@
+{% extends 'dashboard/index.html' %}
+{% block contentbody %}
+
+   <div class="ms-2 me-3">
+ 
+                <div type="button" class="row mt-5" >
+                  <div class="col-sm-2 ">
+                    <span class=" h2">Add Staff<i class="fa-solid fa-circle-question ms-3" style="color:#c7d1d4;"></i> </span>
+                    
+                  </div>
+                  <div class="col-sm-4"></div>
+                  <div class="col-sm-2 row ms-5  border border-info btn-outline-secondary">
+                    <button type="button">Open Documentation</button>
+                  </div>
+                  
+                  <div class="col-sm-2 row ms-5  border border-info btn-outline-secondary">
+                    <button type="button">Setup Details</button>
+                  </div>
+                  <div class="col-sm-1 row ms-5  border border-info btn-outline-secondary">
+                    <button type="button"><i class="fa-solid fa-ellipsis"></i></button>
+                  </div>
+                  
+                  <h1 class="h4 mt-5">Choose Staff Title</h1>
+                  <div class="row ">
+                    <div class="col-sm-3 mb-2">
+                      <div class="card h-30 w-30">
+                        <h5 class="card-title mt-3 ms-3">Sales representative</h5>
+                        
+                        <div class="card-body">
+                          <div class="form-check">
+                            <input class="form-check-input rounded-pill" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              
+                              <p class="card-text small">Sales representative represents us in our stores and field any stand</p>
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="col-sm-3 mb-2  ">
+                      <div class="card h-30 w-30" >
+                        <h5 class="card-title mt-3 ms-3">IT Staff</h5>
+                        <div class="card-body">
+                          <div class="form-check">
+                            <input class="form-check-input rounded-pill" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              
+                              
+                              <p class="card-text small">IT staff deals with all technical work with IT manager and IT teammates.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="col-sm-3 ">
+                      <div class="card h-30 w-30">
+                        <h5 class="card-title mt-3 ms-3">General Service</h5>
+                        <div class="card-body">
+                          <div class="form-check">
+                            <input class="form-check-input rounded-pill" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              
+                              
+                              <p class="card-text small" >General service personnal are responsible for food cleaning and beverage service.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="col-sm-3 ">
+                      <div class="card h-30 w-30" >
+                        <h5 class="card-title mt-3 ms-3">driver</h5>
+                        <div class="card-body">
+                          <div class="form-check">
+                            <input class="form-check-input rounded-pill" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              
+                              
+                              <p class="card-text small">Driver is responsing and transport delivering products between our Supplier.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    
+                    <div class="col-sm-3 h-30 w-30">
+                      <div class="card" >
+                        <h5 class="card-title mt-3 ms-3">Call Center Staff</h5>
+                        <div class="card-body">
+                          <div class="form-check">
+                            <input class="form-check-input rounded-pill" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              
+                              <p class="card-text small">Receives order received by the phone or acts as customer other service</p>
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="col-sm-3 h-30 w-30">
+                      <div class="card" >
+                        <h5 class="card-title mt-3 ms-3">Supervisor</h5>
+                        <div class="card-body">
+                          <div class="form-check">
+                            <input class="form-check-input  rounded-pill" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              
+                              <p class="card-text small">Supervisor provides the guidance in the field of sales and personnal management</p>
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="card" >
+                        <h5 class="card-title mt-3 ms-3">Security</h5>
+                        <div class="card-body">
+                          <div class="form-check">
+                            <input class="form-check-input  rounded-pill" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              
+                              <p class="card-text small">Security personnal are responsible for protecting customer and personnal.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="card">
+                        <h5 class="card-title mt-3 ms-3">Others</h5>
+                        <div class="card-body">
+                          <div class="form-check">
+                            <input class="form-check-input rounded-pill" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              
+                              <p class="card-text small">You will see other personal this section in category will be able Supplier.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <br>
+                    <hr class="mt-4">
+                  </div>
+                  <div class="mt-4">
+                    <p>In this section, be sure to fill in the priority information requested with the personnel completely, it will be useful to add other information in the Add details section. Your records will be approved after being checked by the senior management. After saving, if there is any information you want to change, you can do it from the edit section. Do not forget to add the CV of the staff in the next step. Do not proceed to the next step without saving all the information.</p>
+                  </div>
+                </div>
+                
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row container-fluid">
+                  <div class="col-md-6 ">
+                    <div class="form-outline">
+                      <label class="form-label" for="form3Example1">Name / Surname</label>
+                      <input type="text" placeholder="Enter your name"  class="form-control border border-info" />
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-3 mt-3">
+                        <h2 class="h4">Staff image</h2>
+                        <img src="https://miro.medium.com/proxy/0*pAdZLfSqNrMZAAPA.jpg" class="img-thumbnail mt-2" alt="Cinque Terre" width="150" height="100">
+                      </div>
+                      <div class="col-sm-9 mt-4">
+                        
+                        <h1>Datetime picker</h1>
+                        
+                        <form>
+                          <input class="form-control mt-2 border border-info" type="datetime-local" placeholder="Select Datetime">
+                        </form>
+                        <div class="row">
+                          <div class="col-sm-7 mt-5">
+                            <div class="btn-group">
+                              <label class="form-label" for="form3Example1">Choose Language</label>
+                              <button type="button" class="btn border border-info dropdown-toggle w-100" data-bs-toggle="dropdown" aria-expanded="false">
+                              Choose Language
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li><button class="dropdown-item" type="button">English</button></li>
+                                <li><button class="dropdown-item" type="button">Bengali</button></li>
+                                <li><button class="dropdown-item" type="button">Odiya</button></li>
+                                <li><button class="dropdown-item" type="button">Tamil</button></li>
+                                <li><button class="dropdown-item" type="button">Telgu</button></li>
+                                <li><button class="dropdown-item" type="button">Kannad</button></li>
+                                <li><button class="dropdown-item" type="button">Maratha</button></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col-sm-4 mt-5">
+                            <div class="btn-group">
+                              <label class="form-label" for="form3Example1">Gender</label>
+                              <button type="button" class="btn border border-info dropdown-toggle w-100" data-bs-toggle="dropdown" aria-expanded="false">
+                              Choose Gender
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li><button class="dropdown-item" type="button">Male</button></li>
+                                <li><button class="dropdown-item" type="button">Female</button></li>
+                                <li><button class="dropdown-item" type="button">Both</button></li>
+                                
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-outline">
+                      <label class="form-label" for="form3Example2">Address</label><i class="fa-duotone fa-at ms-3"></i>
+                      <input type="text" placeholder="Westbengal,Sector v,Salt lake,IND"class="form-control border border-info" />
+                      
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12 mt-3">
+                        <div class="form-outline">
+                          <label class="form-label" for="form3Example2">Phone Number</label><i class="fa-solid fa-phone ms-3"></i>
+                          <input type="text" placeholder="9090037500"class="form-control border border-info" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row ">
+                      <div class="col-md-6 mt-5">
+                        <div class="form-outline">
+                          <label class="form-label" for="form3Example2">Mail Address</label><i class="fa-solid fa-envelope ms-3"></i>
+                          <input type="email" placeholder="Enter Mail Address"class="form-control border border-info" />
+                        </div>
+                      </div>
+                      <div class="col-md-6 mt-5">
+                        <div class="btn-group w-100">
+                          <label class="form-label" for="form3Example1">Nationality</label>
+                          <button type="button" class="btn border border-info dropdown-toggle w-100" data-bs-toggle="dropdown" aria-expanded="false">
+                          Choose Nationality
+                          </button>
+                          <ul class="dropdown-menu dropdown-menu-end">
+                            <li><button class="dropdown-item" type="button">IND</button></li>
+                            <li><button class="dropdown-item" type="button">Russia</button></li>
+                            <li><button class="dropdown-item" type="button">UAE</button></li>
+                            <li><button class="dropdown-item" type="button">UK</button></li>
+                            <li><button class="dropdown-item" type="button">Kannad</button></li>
+                            <li><button class="dropdown-item" type="button">Nepal</button></li>
+                            <li><button class="dropdown-item" type="button">Isarail</button></li>
+                          </ul>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6 mt-5">
+                        <button class="btn btn-primary w-100 border border-info bg-primary" type="button">Save Information</button>
+                      </div>
+                      <div class="col-sm-6 mt-5">
+                        <button type="button" class="btn btn-light w-100 border border-info">Next</button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+
+                
+              </div>
+
+{% endblock %}
