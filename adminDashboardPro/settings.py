@@ -124,12 +124,12 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
 
 
-API_KEY = '_TaWZ3oSRBSnGW3JMxiUyw'
-API_SEC = '49uER7eolHFvA1ggmsKlb4V79H2fWeiS5qUa'
+API_KEY = ''
+API_SEC = ''
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'prabhat.webcrone@gmail.com'
-EMAIL_HOST_PASSWORD = 'sqkhkjcuajqczzoy'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
