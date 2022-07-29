@@ -1,17 +1,180 @@
-{% extends 'dashboard/index.html' %}{% load widget_tweaks %}
+{% extends 'dashboard/index.html' %}
+{% load static %}
+{% block style %} <link rel="stylesheet" href="{% static 'css/organisation.css' %}" />
+{% endblock %}
 &nbsp;&nbsp;&nbsp;{% block contentbody %}
-
-
-{% for company in company_list %}
-{{company.company_name}} <br>
-{{company.company_apartment_num}} <br>
-{{company.company_street}},
-{{company.company_city}},
-{{company.company_state}},
-{{company.company_country}} <br>
-{{company.company_contact_number}} <br>
-{{company.company_email_address}}
-
-{% endfor %}
+{% for i in company_list %}
+		<div class="container-fluid">
+			<div class="row">
+				<a href="index.html" class="navbar-brand mx-auto mx-lg-0">
+					<!-- <i class="bi-bullseye brand-logo"></i> -->
+					<img src="https://webkrone.com/static/img/webkrone_logo_80.png" style="height: 80px; width=50px;" alt="img-not found" alt="">
+					<span class="brand-text float-end h3 mt-3">{{i.company_name}}</span>
+				</a>
+			</div>
+			<div class="row">
+				<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+					<div class="carousel-indicators">
+						<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+						<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+						<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+					</div>
+					<div class="carousel-inner">
+						<div class="carousel-item active" data-bs-interval="10000">
+							<img src="https://www.morganphilips.com/Portals/UK/EasyDNNNews/171/772330c37206EDNMainimg-business-group.jpg" class="d-block w-100 h-30" alt="...">
+							<div class="carousel-caption d-none d-md-block">
+								<h5>First slide label</h5>
+								<p>Some representative placeholder content for the first slide.</p>
+							</div>
+						</div>
+						<div class="carousel-item" data-bs-interval="2000">
+							<img src="https://www.jbs.cam.ac.uk/wp-content/uploads/2022/01/exexed-suite-managing-organisations-883x432-1.jpg" class="d-block w-100 h-30" alt="...">
+							<div class="carousel-caption d-none d-md-block">
+								<h5>Second slide label</h5>
+								<p>Some representative placeholder content for the second slide.</p>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<img src="https://shrm-res.cloudinary.com/image/upload/c_crop,h_1192,w_2121,x_0,y_99/w_auto:100,w_1200,q_35,f_auto/v1/News/iStock-961540536_fabmta.jpg" class="d-block w-100 h-30" alt="...">
+							<div class="carousel-caption d-none d-md-block">
+								<h5>Third slide label</h5>
+								<p>Some representative placeholder content for the third slide.</p>
+							</div>
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-10 col-12 mt-5">
+					<h2 class="mb-4">Our <u class="text-info">Goal</u></h2>
+				</div>
+				<div class="col-lg-6 col-12">
+					<h3 class="mb-3">Essential Goals of a Software Development Company</h3>
+					<p>
+						Webkrone Technology addresses the growing needs of organizations to manage and secure information more effectively and intelligently. We work with clients who do not hide from the future but want to define it, clients with high potential and high ambition, determined to adapt and become enduring winners. The team at Webkrone Technology are well-versed with latest and the most powerful technologies available today for locating, organizing, managing, retrieving, analyzing, protecting, and presenting information.
+					</p>
+					<a class="custom-btn custom-border-btn btn custom-link mt-3 me-3" href="#section_3">Meet Our Team</a>
+					<a class="custom-btn btn custom-link mt-3" href="#section_4">Share Idea</a>
+				</div>
+				<div class="col-lg-6 col-12 mt-5 mt-lg-0">
+					<h4>What we started by literally building a table around which to sit down and talk to our clients, is now a studio with a great experience, a greater team and many projects that make us grow and learn every day. We feel this straight-forward approach when talking to you, plus our experience and proven processes are the best way for you to enjoy every step of the project.</h4>
+					<div class="avatar-group border-top py-5 mt-5">
+						<img src="https://image.shutterstock.com/image-photo/smiling-young-middle-eastern-man-260nw-2063524544.jpg" class="img-fluid avatar-image" alt="">
+						<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmVzc2lvbmFsfGVufDB8fDB8fA%3D%3D&w=1000&q=80" class="img-fluid avatar-image avatar-image-left" alt="">
+						<img src="https://3.bp.blogspot.com/-uxtTeBBsmns/WpuZ8olZU4I/AAAAAAAADXY/gY-b0J2pDWsb0k0GQ65okfWhsyoWXkx8gCLcBGAs/s1600/professional-woman-with-blue-dress.jpg" class="img-fluid avatar-image avatar-image-left"alt="">
+						<img src="https://headshots-inc.com/wp-content/uploads/2020/12/Blog-Images.jpg" class="img-fluid avatar-image avatar-image-left"alt="">
+						<p class="d-inline">10000+ People are attending with us</p>
+					</div>
+				</div>
+			</div>
+			<div class="tab-content mt-5" id="nav-tabContent">
+				<div class="tab-pane fade show active" id="nav-DayOne" role="tabpanel" aria-labelledby="nav-DayOne-tab">
+					<div class="row border-bottom pb-5 mb-5">
+						<div class="col-lg-4 col-12">
+							<img src="https://blog.readytomanage.com/wp-content/uploads/2012/09/team-manager.jpg" class="schedule-image img-fluid" alt="">
+						</div>
+						<div class="col-lg-8 col-12 mt-3 mt-lg-0">
+							
+							<h4 class="mb-2 text-primary">Startup Development Ideas</h4>
+							<p>Webkrone is a new generation technology company that caters to services, such as, Digital Transformation, Product Engineering, IoT, Information Management, Cloud Services, Applications Services, IT Consulting, Analytics, and Business Processing Servicing and plays a vital role in transforming and making businesses innovative.
+							</p>
+							<div class="d-flex align-items-center mt-4">
+								<div class="avatar-group d-flex">
+									<img src="https://www.betterteam.com/images/club-manager-job-description-3993x5989-20201123.jpeg?crop=1:1,smart&width=1200&dpr=2" class="img-fluid avatar-image" alt="">
+									<div class="ms-3">
+										Manoj Nandakumar
+										<p class="speakers-text mb-0">CEO at Webkrone</p>
+									</div>
+								</div>
+								
+								
+							</div>
+						</div>
+					</div>
+					<div class="row border-bottom pb-5 mb-5">
+						<div class="col-lg-4 col-12">
+							<img src="https://www.intercollege.ac.cy/wp-content/uploads/leader.jpg" class="schedule-image img-fluid" alt="">
+						</div>
+						<div class="col-lg-8 col-12 mt-3 mt-lg-0">
+							<h4 class="mb-2 text-primary">Introduction to Online Global Leadership</h4>
+							<p>Webkrone as a technology company builds business advantages with a global delivery model with unrelenting focus on optimal IT development and delivery, generate great business benefits for clients, deliver on time, and expand rapidly building on delivery strengths. With these, clients can simultaneously reduce their IT operations cost while increasing their ability to meet changing business needs.
+							</p>
+							<div class="d-flex align-items-center mt-4">
+								<div class="avatar-group d-flex">
+									<img src="https://thumbs.dreamstime.com/b/portrait-confident-cool-promoter-girl-point-index-finger-copyspace-select-suggest-ads-wear-casual-style-clothing-portrait-162926740.jpg" class="img-fluid avatar-image" alt="">
+									<div class="ms-3">
+										Gautam
+										<p class="speakers-text mb-0">Graphic Designer</p>
+									</div>
+								</div>
+								
+								
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-4 col-12">
+							<img src="https://www.thebcfgroup.co.uk/images/group-of-managers-second-570x380.png" class="schedule-image img-fluid" alt="">
+						</div>
+						<div class="col-lg-8 col-12 mt-3 mt-lg-0">
+							<h4 class="mb-2 text-primary">Our Startup Team Goal</h4>
+							<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut consequat purus posuere tortor efficitur, sit amet dignissim libero aliquamWebkrone as a technology company builds business advantages with a global delivery model with unrelenting focus on optimal IT development and delivery, generate great business benefits for clients, deliver on time, and expand rapidly building on delivery strengths. With these, clients can simultaneously reduce their IT operations cost while increasing their ability to meet changing business needs.</p>
+							<div class="d-flex align-items-center mt-4">
+								<div class="avatar-group d-flex">
+									<img src="https://media.newyorker.com/photos/5b2149580cfca819fd5fbdd8/master/pass/Phillips-Gareth-Southgate.jpg" class="img-fluid avatar-image" alt="">
+									<div class="ms-3">
+										Prabhat
+										<p class="speakers-text mb-0">Full Stack Developer</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 col-12 mt-5">
+					<h2 class="mb-5">Here you go <u class="text-info">Venue</u></h2>
+				</div>
+				<div class="col-lg-6 col-12">
+					<iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1511.091461689997!2d-73.9866630916883!3d40.758001294831736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855a96da09d%3A0x860bf5a5e1a00a68!2sTimes%20Square%2C%20New%20York%2C%20NY%2010036%2C%20USA!5e0!3m2!1sen!2ssg!4v1643035529098!5m2!1sen!2ssg" width="100%" height="371.59" allowfullscreen="" loading="lazy"></iframe>
+				</div>
+				<div class="col-lg-6 col-12 mt-5 mt-lg-0">
+					<div class="venue-thumb bg-white shadow-lg">
+						
+						<div class="venue-info-title">
+							<h2 class="text-white mb-0">{{i.company_name}} Adreess</h2>
+						</div>
+						<div class="venue-info-body">
+							<h4 class="d-flex">
+							<i class="fa-solid fa-location-pin"></i>
+							<span class="ms-2">{{i.company_street}},{{i.company_city}},{{i.company_state}},   {{i.company_country}}</span>
+							</h4>
+							<h5 class="mt-4 mb-3">
+							<a href="mailto:hello@yourgmail.com">
+								<i class="fa-solid fa-envelope"></i>
+								<span class="ms-2">{{i.company_email_address}}</span>
+							</a>
+							</h5>
+							<h5 class="mb-0">
+							<a href="tel: 305-240-9671">
+								<i class="fa-solid fa-phone"></i>
+								<span class="ms-2">{{i.company_contact_number}}</span>
+							</a>
+							</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+	{% endfor %}
 
 {% endblock %}
