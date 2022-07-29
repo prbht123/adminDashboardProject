@@ -3,38 +3,11 @@
 
 <div class="container">
     <div class="row">
-        <div class="offset-sm-3 col-sm-6">
-            <form action="{% url 'adminDjango:zoom_meeting' %}" method="post">
-                {% csrf_token %}
-                <label for="">Topic</label><br>
-                <input type="text" name="topic" placeholder="Enter Topic...">
-                <br><br>
-
-                <label>Duration</label> <br>
-                <select name="duration" id="">
-                    <option value="">Select</option>
-                    <option value="15">15 mins</option>
-                    <option value="30">30 mins</option>
-                    <option value="45">45 mins</option>
-                    <option value="60">1 hr</option>
-                </select>
-                <br><br>
-
-                <label for="start">Date</label> <br>
-                <input type="date" id="start" name="startDate" value="Select Date">
-                <br><br>
-
-                <label>Start Time</label> <br>
-                <select name="time" id="">
-                    <option value="">Select</option>
-                    <option value="12">12:00 pm</option>
-                    <option value="13">13:00 pm</option>
-                    <option value="14">14:00 pm</option>
-                </select>
-                <br><br>
-                <input type="submit" class="btn btn-primary" value="Submit">
-            </form>
-        </div>
+        <h3 class="text-primary">Create a Zoom Meeting Here</h3>
+            
+           <img src="https://www.gosbcta.com/wp-content/uploads/2020/04/zoom-logo.jpg" class="img-fluid  " style="height: 540px;
+  width: 100%;"alt="Image not found">
+        
     </div>
 </div>
 <hr>

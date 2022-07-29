@@ -23,7 +23,7 @@ from django.core.mail import send_mail
 
 
 def adminDashboard(request):
-    return render(request, 'dashboard/index.html')
+    return render(request, 'dashboard/dashboard.html')
 
 
 def employeeDetailList(request):
