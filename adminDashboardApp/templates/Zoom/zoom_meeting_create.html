@@ -1,7 +1,7 @@
 {% extends 'dashboard/index.html' %}{% load widget_tweaks %}
 {% block contentbody %}
 
-<div class="container ms-4 mt-5">
+<div class="container ms-4 mt-2">
 <form method="post" enctype="multipart/form-data">
  <h4 class="mb-3 text-primary"> Create Zoom Meeting link </h4>
   <img src="https://www.gosbcta.com/wp-content/uploads/2020/04/zoom-logo.jpg" class="img-fluid  " style="height: 440px;
@@ -20,7 +20,7 @@
     
  {% endfor %}
   <button type="submit" class="btn btn-outline-primary mt-4 mb-2 me-4 float-start">Submit</button>
-  <a class="btn btn-outline-danger mt-4 mb-2 float-end" href="{% url 'adminDjango:department' %}">CANCEL</a>
+  <a class="btn btn-outline-danger mt-4 mb-2 float-end" href="{% url 'adminDjango:zoom_meeting' %}">CANCEL</a>
  </div>
  </div>
    
