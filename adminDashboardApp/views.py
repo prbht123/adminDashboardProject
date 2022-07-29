@@ -374,7 +374,9 @@ class zoomMeetingDetailView(DetailView):
         context = super(zoomMeetingDetailView,
                         self).get_context_data(*args, **kwargs)
         context["zoom_meeting_users"] = ZoomMeetingsUsers.objects.filter(
-            zoom_meeting__id=self.kwargs['pk'])[0]
+            zoom_meeting__id=self.kwargs['pk'])
+        if context['zoom_meeting_users']:
+            context['zoom_meeting_users'] = context['zoom_meeting_users'][0]
         user_department = Department.objects.filter(
             employee__username=self.request.user.username, department_name='hr')
         if user_department:

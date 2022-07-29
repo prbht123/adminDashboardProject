@@ -1,24 +1,97 @@
 {% extends 'dashboard/index.html' %}{% load widget_tweaks %}
 &nbsp;&nbsp;&nbsp;{% block contentbody %}
-<div class="row container">
- <h4 class="mb-5 mt-2"> Meeting Details of users </h4>
+<div class="container">
+ <h4 class="mb-3 mt-2"> Meeting Topic : {% if zoom_meeting_users %} {{zoom_meeting_users.zoom_meeting.meeting_topic}} {% else %} {{zoom_meeting.meeting_topic}} {% endif %}</h4>
+    
+
+      <img src="https://www.gosbcta.com/wp-content/uploads/2020/04/zoom-logo.jpg" class="img-fluid mb-5 " style="height: 440px;
+  width: 90%;"alt="Image not found">
+  
+
+  
    {% if zoom_meeting_users %}
-       {{zoom_meeting_users}}
        {% if user_department %}
        
           {% if not zoom_meeting_users.mail_send %}
-       <a class="btn btn-outline-primary mt-5" href="{% url 'adminDjango:zoom_meeting_send_mail' pk=zoom_meeting_users.id %}"> Send to the users of zoom interview link </a>
+          <div class="col-sm-6">
+        
+       <a class="btn btn-outline-primary mt-5 form-control" href="{% url 'adminDjango:zoom_meeting_send_mail' pk=zoom_meeting_users.id %}"> Send to the users of zoom interview link </a>
+       </div>
        {% endif %}
-       <a class="btn btn-outline-primary mt-5" href="{% url 'adminDjango:zoom_meeting_Delete' pk=zoom_meeting_users.zoom_meeting.id %}"> Delete zoom meeting </a>
+    
+        <div class="col-sm-5">    
+       <a class="btn btn-outline-primary mt-5 form-control" href="{% url 'adminDjango:zoom_meeting_Delete' pk=zoom_meeting_users.zoom_meeting.id %}"> Delete zoom meeting </a>
+        </div>
        {% endif %}
+    
+     
+       
+
+       <div class = "row container-fluid">
+        
+         <div class="col-sm-4">
+         <hr class="mt-3">
+             <p><span class="h5 ms-4">Meeting Date : </span> {{zoom_meeting_users.zoom_meeting.meeting_date}}</p>
+            <p><span class="h5 ms-4">Meeting Time : </span> {{zoom_meeting_users.zoom_meeting.meeting_time}}</p>
+            <p><span class="h5 ms-4">Meeting Duration : </span> {{zoom_meeting_users.zoom_meeting.meeting_duration}} minuts</p>
+            <p><span class="h5 ms-4">Meeting Status : </span> {{zoom_meeting_users.status}}</p>
+             
+
+            
+            </div>
+            <div class="col-sm-7">
+            <hr class="mt-3">
+            <p><span class="h5 ms-4">Topic : </span> {{zoom_meeting_users.zoom_meeting.meeting_topic}}</p>
+            <p><span class="h5 ms-4">Users : </span> {{zoom_meeting_users.users}}</p>
+            <p><span class="h5 ms-4">Users_staff : </span> {{zoom_meeting_users.users_staff}}</p>
+             
+            <div>
+       </div>
+      </div>
+      
+       <div class = "row mt-4">
+         
+            <p><span class="h5 ms-4">Meeting Zoom Link : </span><a href ="{{zoom_meeting_users.zoom_meeting.meeting_zoom_link}}"> {{zoom_meeting_users.zoom_meeting.meeting_zoom_link}}  </a></p>
+         
+       </div>
     {% else %}
-        {{zoom_meeting.id}}<br>
-        {{zoom_meeting.meeting_topic}}
         {% if user_department %}
-        <a class="btn btn-outline-primary" href="{% url 'adminDjango:zoom_meeting_user_create' pk=zoom_meeting.id %}">Add users for scheduling interview with exist zoom meeting links</a>
-         <a class="btn btn-outline-primary mt-5" href="{% url 'adminDjango:zoom_meeting_Delete' pk=zoom_meeting.id %}"> Delete zoom meeting </a>
-         {% endif %}%
+        <div class="row ">
+          <div class = "col-sm-6">
+           <a class="btn btn-outline-primary form-control" href="{% url 'adminDjango:zoom_meeting_user_create' pk=zoom_meeting.id %}">Add users for scheduling interview with exist zoom meeting links</a>
+          </div>
+
+             <div class = "col-sm-5">
+              <a class="btn btn-outline-primary form-control" href="{% url 'adminDjango:zoom_meeting_Delete' pk=zoom_meeting.id %}"> Delete zoom meeting </a>
+          </div>
+        </div>
+       {% endif %}
+         <div class = "row container-fluid">
+        
+         <div class="col-sm-4">
+         <hr class="mt-3">
+          <p><span class="h5 ms-4">Meeting Date : </span> {{zoom_meeting.meeting_date}}</p>
+            <p><span class="h5 ms-4">Meeting Time : </span> {{zoom_meeting.meeting_time}}</p>
+            <p><span class="h5 ms-4">Meeting Duration : </span> {{zoom_meeting.meeting_duration}} minuts</p>
+             
+                       
+            </div>
+            <div class="col-sm-7">
+            <hr class="mt-3">
+           <p><span class="h4 ms-4">Topic : </span> {{zoom_meeting.meeting_topic}}</p>
+              
+            <div>
+       </div>
+       </div>
+      
+         <div class = "row mt-4">
+         
+            <p><span class="h5 ms-4">Meeting Zoom Link : </span><a href ="{{zoom_meeting.meeting_zoom_link}}"> {{zoom_meeting.meeting_zoom_link}}  </a></p>
+         
+         </div>
+
      {% endif %}
+      
     
 </div>
 {% endblock %}
