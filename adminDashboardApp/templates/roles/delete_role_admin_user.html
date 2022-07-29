@@ -1,0 +1,21 @@
+{% extends 'dashboard/index.html' %} {% load widget_tweaks %}
+&nbsp;&nbsp;&nbsp;{% block contentbody %}
+
+<div class="container pt-5 text-centre">
+  <form method="post" novalidate action="">
+    {% csrf_token %}
+    <div class="col-sm-4">
+      <h5><p>Are you sure you want to remove?</p></h5>
+      <button type="submit" class="btn btn-outline-success float-left">
+        Submit
+      </button>
+      <a
+        href="{% url 'adminDjango:createRole' %}"
+        class="me-5 btn btn-outline-primary float-right"
+        >Cancel</a
+      >
+    </div>
+  </form>
+</div>
+
+{% endblock %}

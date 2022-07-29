@@ -1,0 +1,18 @@
+{% extends 'dashboard/index.html' %}{% load widget_tweaks %}
+{% block contentbody %}
+
+<div class="container ms-4 mt-5">
+<form method="post" enctype="multipart/form-data">
+ <h4> Enter user with department </h4>
+  {% csrf_token %}
+   <div class="row container">
+   <div class="col-sm-6 ">
+    {{form.as_p}}
+  <button type="submit" class="btn btn-outline-primary mt-4 mb-2 me-4 float-start">Submit</button>
+  <a class="btn btn-outline-danger mt-4 mb-2 float-end" href="{% url 'adminDjango:zoom_meeting_list' %}">CANCEL</a>
+ </div>
+ </div>
+   
+  </form>
+</div>
+{% endblock %}

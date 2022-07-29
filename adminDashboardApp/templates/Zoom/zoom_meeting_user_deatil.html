@@ -1,0 +1,24 @@
+{% extends 'dashboard/index.html' %}{% load widget_tweaks %}
+&nbsp;&nbsp;&nbsp;{% block contentbody %}
+<div class="row container">
+ <h4 class="mb-5 mt-2"> Meeting Details of users </h4>
+   {% if zoom_meeting_users %}
+       {{zoom_meeting_users}}
+       {% if user_department %}
+       
+          {% if not zoom_meeting_users.mail_send %}
+       <a class="btn btn-outline-primary mt-5" href="{% url 'adminDjango:zoom_meeting_send_mail' pk=zoom_meeting_users.id %}"> Send to the users of zoom interview link </a>
+       {% endif %}
+       <a class="btn btn-outline-primary mt-5" href="{% url 'adminDjango:zoom_meeting_Delete' pk=zoom_meeting_users.zoom_meeting.id %}"> Delete zoom meeting </a>
+       {% endif %}
+    {% else %}
+        {{zoom_meeting.id}}<br>
+        {{zoom_meeting.meeting_topic}}
+        {% if user_department %}
+        <a class="btn btn-outline-primary" href="{% url 'adminDjango:zoom_meeting_user_create' pk=zoom_meeting.id %}">Add users for scheduling interview with exist zoom meeting links</a>
+         <a class="btn btn-outline-primary mt-5" href="{% url 'adminDjango:zoom_meeting_Delete' pk=zoom_meeting.id %}"> Delete zoom meeting </a>
+         {% endif %}%
+     {% endif %}
+    
+</div>
+{% endblock %}

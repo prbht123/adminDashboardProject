@@ -1,0 +1,23 @@
+{% extends 'dashboard/index.html' %} {% load widget_tweaks %}
+&nbsp;&nbsp;&nbsp;{% block contentbody %}
+
+<div class="container col-sm-6">
+  <form method="post" enctype="multipart/form-data">
+    <h3><p class="text-center">Edit Role Management</p></h3>
+    {% csrf_token %} {% for field in form.visible_fields %}
+    <div class="form-group mt-1">
+      <h3><p class="text-primary">{{field.label}}</p></h3>
+      {% render_field field class="form-control mb-2" name=field.label %}&nbsp;
+      {% for error in field.errors %}
+      <span class="help-block">{{ error }}</span>
+      {% endfor %}
+    </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-outline-success mt-2 mb-2">
+      Submit
+    </button>
+    <a href="#" class="me-2 btn btn-outline-danger float-right">Cancel</a>
+  </form>
+</div>
+{% endblock %}

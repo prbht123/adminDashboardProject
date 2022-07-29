@@ -1,0 +1,47 @@
+{% extends 'dashboard/index.html' %} {% load widget_tweaks %} &nbsp;&nbsp;&nbsp;
+{% load static %} {% block style %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+{% endblock %} {% block contentbody %}
+
+<h1 class="text-center text-danger">Attendance Record</h1>
+<br /><br />
+<div class="container-fluid">
+  <div class="form-content">
+    <form action="/attendance/" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <br />
+      <input class="mt-2" type="file" name="datafile" /><br />
+      <label>Employee_id</label> &nbsp;&nbsp;
+      <input class="mt-2" type="text" name="id" placeholder="Emp ID..." />
+      &nbsp;
+      <button class="mt-2" type="submit" id="button">Upload Data</button>
+    </form>
+  </div>
+  <br /><br />
+  <table class="table text-center">
+    <thead class="bg-warning text-light">
+      <tr>
+        <th scope="col">Sl No.</th>
+        <th scope="col">Emp_id</th>
+        <th scope="col">Date</th>
+        <th scope="col">Check-in</th>
+        <th scope="col">Check-out</th>
+        <th scope="col">Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in result %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ item.id }}</td>
+        <td>{{ item.date }}</td>
+        <td>{{ item.checkin.time }}</td>
+        <td>{{ item.checkout.time }}</td>
+        <td>{{ item.duration }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

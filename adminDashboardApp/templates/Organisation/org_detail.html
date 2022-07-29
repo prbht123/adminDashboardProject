@@ -1,0 +1,17 @@
+{% extends 'dashboard/index.html' %}{% load widget_tweaks %}
+&nbsp;&nbsp;&nbsp;{% block contentbody %}
+
+
+{% for company in company_list %}
+{{company.company_name}} <br>
+{{company.company_apartment_num}} <br>
+{{company.company_street}},
+{{company.company_city}},
+{{company.company_state}},
+{{company.company_country}} <br>
+{{company.company_contact_number}} <br>
+{{company.company_email_address}}
+
+{% endfor %}
+
+{% endblock %}

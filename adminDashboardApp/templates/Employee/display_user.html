@@ -1,0 +1,74 @@
+{% extends 'dashboard/index.html' %} {% load widget_tweaks %}
+&nbsp;&nbsp;&nbsp;{% block contentbody %} {% if not admin %}
+<a
+  href="{% url 'adminDashboardApp:createNewUser' %}"
+  class="btn btn-outline-success"
+  style="float: right"
+  >Create new User</a
+>
+
+{% endif %}
+<br /><br />
+<table class="table table-info table-striped text-center table-hover">
+  <thead class="table-danger">
+    <tr>
+      <th scope="col">Sl No</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Contact Number</th>
+      <th scope="col">Age</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Address</th>
+      {% if user.is_staff %}
+      <th scope="col">Action</th>
+      {% endif %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for employee in employees %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{employee.user.first_name}}</td>
+      <td>{{employee.user.email}}</td>
+      <td>{{employee.contact_number}}</td>
+      <td>{{employee.age}}</td>
+      <td>{{employee.gender}}</td>
+      <td>{{employee.address}}</td>
+      {% if user.is_staff %}
+      <td>
+        {% if employee.user.is_active %} {% if employee.user.is_staff %}<a
+          href="{% url 'adminDjango:convertToNormal' pk=employee.user.id %}"
+          class="btn btn-outline-primary"
+          >Normal</a
+        >{% else %}<a
+          href="{% url 'adminDjango:convertToAdmin' pk=employee.user.id %}"
+          class="btn btn-outline-primary"
+          >Admin</a
+        >
+        {% endif %}
+        <a
+          href="{% url 'adminDjango:deleteUser' pk=employee.user.id nm='deactivate' %}"
+          class="btn btn-outline-danger"
+          >Deactivate</a
+        >
+
+        {% else %}
+
+        <a
+          href="{% url 'adminDjango:activatedUsers' pk=employee.user.id %}"
+          class="btn btn-outline-primary"
+          >Activate</a
+        >
+        <a
+          href="{% url 'adminDjango:deleteDeactivatedUser' pk=employee.user.id %}"
+          class="ms-1 btn btn-outline-danger"
+          >Delete</a
+        >
+        {% endif %}
+      </td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'dashboard/index.html' %}{% load widget_tweaks %}
+{% block contentbody %}
+
+<div class="container ms-4 mt-5">
+<form method="post" enctype="multipart/form-data">
+ <h4> Enter user with department </h4>
+  {% csrf_token %}
+   <div class="row container">
+   <div class="col-sm-6 ">
+  {% for field in form.visible_fields %}
+ 
+    {% if field.label == 'Zoom meeting' %}
+      <label for="{{ field.id_for_label }}" class="mt-3 mb-1">{{ field.label }}</label>
+      <input value="{{zoom_meeting.meeting_topic}}" class="form-control" />
+      <input value="{{zoom_meeting.id}}" name="zoom_meeting" class="form-control" style="display:None" />
+    {% else %} 
+    <label for="{{ field.id_for_label }}" class="mt-3 mb-1">{{ field.label }}</label>
+    {% render_field field class="form-control" placeholder=field.label %}
+    {% for error in field.errors %}
+      <span class="help-block">{{ error }}</span>
+    {% endfor %}
+    {% endif %}
+ {% endfor %}
+  <button type="submit" class="btn btn-outline-primary mt-4 mb-2 me-4 float-start">Submit</button>
+  <a class="btn btn-outline-danger mt-4 mb-2 float-end" href="{% url 'adminDjango:department' %}">CANCEL</a>
+ </div>
+ </div>
+   
+  </form>
+</div>
+{% endblock %}

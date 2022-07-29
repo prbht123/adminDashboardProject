@@ -1,0 +1,67 @@
+{% extends 'dashboard/index.html' %} {% load widget_tweaks %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/joining.css' %}"> {% endblock %}
+{% block contentbody %}
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="upper-content">
+      <img src="{% static 'images/webkrone.png' %}" alt="" />
+      <p class="logo-p">Webkrone Technology Pvt. Ltd.</p>
+      <label>Date:</label>
+      <input type="text" class="logo-date-input" name="date" />
+    </div>
+  </div>
+  <br />
+  <div class="container address-content">
+    <div class="office-content">
+      <p class="office-p">
+        To,<br />Webkrone Technology Pvt. Ltd. <br />
+        Module E, 3rd Floor, <br />
+        Salt Lake Incubation Center, <br />
+        XI-8/2, Block - EP, Salt Lake City Sector 5, <br />
+        Kolkata - 700091, <br />
+        Email: contact@webkrone.com
+      </p>
+    </div>
+  </div>
+  <div class="container form-content">
+    <h4 class="text-center"><u>Sub:- Joining Letter</u></h4>
+    <form method="post" action="{% url 'adminDjango:converted_pdf' %}">
+      {% csrf_token %}
+      <p class="form-p">
+        Dear Sir, <br />
+        I <input type="text" class="form-data" name="emp_name" />, have joined
+        Webkrone Technology Pvt. Ltd., today i.e,
+        <input type="text" class="form-data" name="date" /> <br />
+        <br />
+        as <input type="text" class="form-data" name="position" /> at
+        <input type="text" class="form-data" name="location" /> (location) and
+        have No Objection from my previous <br />
+        <br />
+        Company <input type="text" class="form-data" name="pre_company" />and
+        my Parents / Spouse / Local Guardian - Mr / Mrs / Ms
+        <input type="text" class="form-data-1" name="guardian" />.
+        <br /><br /><br />
+        Thanking You, <br /><br />
+        Yours Sincerely, <br />
+        <input type="text" class="sign" name="emp_name" />
+      </p>
+      <br />
+      <button class="btn btn-success">Export_to_pdf</button>
+    </form>
+  </div>
+  <br /><br /><br />
+  <footer>
+    <p class="footer-p text-center">
+      <span id="company_name"> Webkrone Technology Pvt. Ltd., </span><br />
+      Module E, 3rd Floor, Salt Lake Incubation Center, XI-8/2, Block - EP,
+      Salt Lake City Sector 5, <br />Kolkata - 700091, Email:
+      contact@webkrone.com
+    </p>
+  </footer>
+
+  {% endblock %}

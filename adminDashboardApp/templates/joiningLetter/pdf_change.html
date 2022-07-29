@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joining Letter</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      img {
+        width: 162px;
+        height: 40px;
+        margin-top: 10%;
+      }
+
+      .upper-content {
+        position: absolute;
+        right: 3%;
+      }
+
+      .logo-p {
+        margin-top: 8px;
+      }
+
+      .logo-date-input {
+        border: 0;
+        border-bottom: 1px solid black;
+        outline: 0;
+        width: 70%;
+        margin-top: 2%;
+      }
+
+      .office-content {
+        margin-top: 20%;
+      }
+
+      .form-data {
+        border: 0;
+        border-bottom: 1px solid black;
+        outline: 0;
+        width: 30%;
+      }
+
+      .sign {
+        border: 0;
+        border-bottom: 1px solid black;
+        outline: 0;
+        width: 15%;
+      }
+
+      /* .form-p {
+        padding-left: 5%;
+      } */
+
+      span {
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .form-data-1 {
+        border: 0;
+        border-bottom: 1px solid black;
+        outline: 0;
+        width: 24%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="upper-content">
+        <img src="{{ image_path }}" alt="" />
+        <p class="logo-p">Webkrone Technology Pvt. Ltd.</p>
+        <label>Date:</label>
+        {{ date }}
+      </div>
+    </div>
+    <br />
+    <div class="container address-content">
+      <div class="office-content">
+        <p class="office-p">
+          To,<br />Webkrone Technology Pvt. Ltd. <br />
+          Module E, 3rd Floor, <br />
+          Salt Lake Incubation Center, <br />
+          XI-8/2, Block - EP, Salt Lake City Sector 5, <br />
+          Kolkata - 700091, <br />
+          Email: contact@webkrone.com
+        </p>
+      </div>
+    </div>
+    <div class="container form-content">
+      <h4 style="text-align: Center"><u>Sub:- Joining Letter</u></h4>
+      <form action="#">
+        {% csrf_token %}
+        <p class="form-p">
+          Dear Sir, <br />
+          I {{ emp_name }}, have joined Webkrone Technology Pvt. Ltd., today
+          i.e, {{ date }}
+          <br />
+          as {{ position }} at {{ location }} (location) and have No Objection
+          from my previous
+          <br />
+          Company {{ pre_company }} and my Parents / Spouse / Local Guardian -
+          Mr / Mrs / Ms {{ guardian }}. <br /><br /><br />
+          Thanking You, <br /><br />
+          Yours Sincerely, <br />
+          {{ emp_name }}
+        </p>
+      </form>
+    </div>
+    <br /><br /><br />
+    <footer>
+      <p style="text-align: Center">
+        <span> Webkrone Technology Pvt. Ltd., </span><br />
+        Module E, 3rd Floor, Salt Lake Incubation Center, XI-8/2, Block - EP,
+        Salt Lake City Sector 5, <br />Kolkata - 700091, Email:
+        contact@webkrone.com
+      </p>
+    </footer>
+  </body>
+</html>

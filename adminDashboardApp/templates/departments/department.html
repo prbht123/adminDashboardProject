@@ -1,0 +1,60 @@
+{% extends 'dashboard/index.html' %}{% load widget_tweaks %}
+&nbsp;&nbsp;&nbsp;{% block contentbody %}
+<h4 class="mt-5 mb-4">Departments </h4>
+
+{% if user_department %}
+<div class = "container ms-4 mb-4">
+<a href="{% url 'adminDjango:department_create' %}" class="btn btn-outline-primary"> Add Employee Department</a>
+
+</div>
+<hr>
+{% endif %}
+<div class="container mt-3 ms-4">
+    {% if hrs %}
+    <div class="card">
+        <div class="card-header">HRs</div>
+        <div class="card-body">{% for user in hrs %}<p>{{user.employee.first_name}} {{user.employee.last_name}}{% if user_department %}<span class="float-end"><a href="{% url 'adminDjango:department_update' pk=user.id %}" class="btn btn-outline-primary">Edit</a><a href="{% url 'adminDjango:department_delete' pk=user.id %}" class="ms-2 ml-2 btn btn-outline-primary">Delete</a></span>{% endif %}</p>{% endfor %}</div>
+    </div>
+    {% endif %}
+
+    {% if backoffices %}
+    <div class="card">
+        <div class="card-header">BackOffices</div>
+        <div class="card-body">{% for user in backoffices %}<p>{{user.employee.first_name}} {{user.employee.last_name}}{% if user_department %}<span class="float-end"><a href="{% url 'adminDjango:department_update' pk=user.id %}" class="btn btn-outline-primary">Edit</a><a href="{% url 'adminDjango:department_delete' pk=user.id %}" class="ms-2 ml-2 btn btn-outline-primary">Delete</a></span>{% endif %}</p>{% endfor %}</div>
+    </div>
+    {% endif %}
+
+
+    {% if developers %}
+    <div class="card">
+        <div class="card-header">Developers</div>
+        <div class="card-body">{% for user in developers %}<p>{{user.employee.first_name}} {{user.employee.last_name}}{% if user_department %}<span class="float-end"><a href="{% url 'adminDjango:department_update' pk=user.id %}" class="btn btn-outline-primary">Edit</a><a href="{% url 'adminDjango:department_delete' pk=user.id %}" class="ms-2 ml-2 btn btn-outline-primary">Delete</a></span>{% endif %}</p>{% endfor %}</div>
+    </div>
+    {% endif %}
+
+    {% if designers %}
+    <div class="card">
+        <div class="card-header">Designers</div>
+        <div class="card-body">{% for user in designers %}<p>{{user.employee.first_name}} {{user.employee.last_name}}{% if user_department %}<span class="float-end"><a href="{% url 'adminDjango:department_update' pk=user.id %}" class="btn btn-outline-primary">Edit</a><a href="{% url 'adminDjango:department_delete' pk=user.id %}" class="ms-2 ml-2 btn btn-outline-primary">Delete</a></span>{% endif %}</p>{% endfor %}</div>
+    </div>
+    {% endif %}
+
+    {% if business_developments %}
+    <div class="card">
+        <div class="card-header">Business Developments</div>
+        <div class="card-body">{% for user in business_developments %}<p>{{user.employee.first_name}} {{user.employee.last_name}}{% if user_department %}<span class="float-end"><a href="{% url 'adminDjango:department_update' pk=user.id %}" class="btn btn-outline-primary">Edit</a><a href="{% url 'adminDjango:department_delete' pk=user.id %}" class="ms-2 ml-2 btn btn-outline-primary">Delete</a></span>{% endif %}</p>{% endfor %}</div>
+    </div>
+    {% endif %}
+
+    {% if admins %}
+    <div class="card">
+        <div class="card-header">Admins</div>
+        <div class="card-body">{% for user in admins %}<p>{{user.employee.first_name}} {{user.employee.last_name}}{% if user_department %}<span class="float-end"><a href="{% url 'adminDjango:department_update' pk=user.id %}" class="btn btn-outline-primary">Edit</a><a href="{% url 'adminDjango:department_delete' pk=user.id %}" class="ms-2 ml-2 btn btn-outline-primary">Delete</a></span>{% endif %}</p>{% endfor %}</div>
+    </div>
+    {% endif %}
+
+
+</div>
+
+
+{% endblock %}

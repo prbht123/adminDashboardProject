@@ -1,0 +1,21 @@
+{% extends 'dashboard/index.html' %} {% load widget_tweaks %}
+&nbsp;&nbsp;&nbsp;{% block contentbody %}
+
+<div class="container pt-5 text-centre">
+  <form method="post" novalidate action="">
+    {% csrf_token %}
+    <div class="col-sm-4">
+      <h5><p>Are you sure you want to remove user from this department.</p></h5>
+      <button type="submit" class="btn btn-outline-success float-start">
+        Submit
+      </button>
+      <a
+        href="{% url 'adminDjango:department' %}"
+        class="me-5 btn btn-outline-primary float-end"
+        >Cancel</a
+      >
+    </div>
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,102 @@
+{% extends 'dashboard/index.html' %} {% load widget_tweaks %}
+&nbsp;&nbsp;&nbsp;{% block contentbody %}
+
+<form action="" method="post">
+  {% csrf_token %}
+  <p>Please, Enter your personal details</p>
+  <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    First Name
+  </label>
+
+  <div class="input-group mb-3">
+    {{personal_form.first_name|add_class:"form-control" }}
+  </div>
+  <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    Last Name
+  </label>
+
+  <div class="input-group mb-3">
+    {{personal_form.last_name|add_class:"form-control" }}
+  </div>
+  <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 20px 0 0;
+      display: inline-block;
+    "
+  >
+    Age
+  </label>
+  <div class="input-group mb-3">
+    {{ personal_form.age|add_class:"form-control" }}
+  </div>
+
+  <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    Address
+  </label>
+
+  <div class="input-group mb-3">
+    {{personal_form.address|add_class:"form-control"}}
+  </div>
+  <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    Contact Number
+  </label>
+
+  <div class="input-group mb-3">
+    {{personal_form.contact_number|add_class:"form-control"}}
+  </div>
+  <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    Gender
+  </label>
+
+  <div class="input-group mb-3">
+    {{personal_form.gender|add_class:"form-control"}}
+  </div>
+  <button class="btn btn-outline-success ml-4 mt-4" type="submit">
+    Summit
+  </button>
+</form>
+
+{% endblock %}
