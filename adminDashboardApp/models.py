@@ -122,3 +122,6 @@ class ZoomMeetingsUsers(models.Model):
         max_length=250, choices=status_choice, default='pending')
     mail_send = models.BooleanField(default=False)
     message = models.CharField(max_length=355, null=True)
+
+
+

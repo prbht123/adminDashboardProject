@@ -22,6 +22,20 @@ from .utills import createMeeting
 from django.core.mail import send_mail
 
 
+def test(request):
+    this_folder = os.path.dirname(os.path.abspath(__file__))
+    context = {
+        'emp_name': "hello",
+        'date': "12-2-2002",
+        'position': 'Hr',
+        'location': "kolkata",
+        'pre_company': "webkrone",
+        'guardian': "ghhgd",
+        'image_path':  'file://' + os.path.join(this_folder, 'static', 'images', 'webkrone.png')
+    }
+    return render(request, 'joiningLetter/pdf_change.html', context)
+
+
 def adminDashboard(request):
     return render(request, 'dashboard/dashboard.html')
 
@@ -264,8 +278,6 @@ def joinLetter(request):
 def convertPdf(request):
     if request.method == "POST":
         this_folder = os.path.dirname(os.path.abspath(__file__))
-        print(this_folder)
-        print("0000000000")
         context = {
             'emp_name': request.POST['emp_name'],
             'date': request.POST['date'],
@@ -275,8 +287,6 @@ def convertPdf(request):
             'guardian': request.POST['guardian'],
             'image_path':  'file://' + os.path.join(this_folder, 'static', 'images', 'webkrone.png')
         }
-        print(context['image_path'])
-        print("11111111111")
         html = render_to_string('joiningLetter/pdf_change.html', context)
         response = HttpResponse(content_type='application/pdf')
         response['Content-Disposition'] = 'inline:filename= "{}.pdf"'.format(

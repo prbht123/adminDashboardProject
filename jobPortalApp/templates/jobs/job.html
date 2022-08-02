@@ -1,0 +1,88 @@
+{% extends 'dashboard/index.html' %} 
+{% load static %}
+{% block contentbody %}
+
+<div class="container">
+
+<img src="{% static 'images/jobs/job1.png' %}" class="w-100" style="height:450px"/>
+
+</div>
+
+ <div class="row container mt-5 ms-5">
+ <div class="col-sm-5 mt-3 ms-3">
+ <a href="{% url 'jobs:job_list' %}">
+  <div class="card ">
+    
+    <div class="card-body">Job Lists</div> 
+   
+  </div>
+  </a>
+  </div>
+   <div class="col-sm-5 mt-3 ms-3">
+    {% for key, value in jobuserprofile.items %} 
+     {% if key == 'user_job_profile' %}
+        {% if value %}
+  <a href="{% url 'jobs:user_profile_job_update' slug=value.slug %}">
+<div class="card ">
+             <div class="card-body">User Update Job Profile</div> 
+  </div>
+  </a>
+  {% else %}
+     <a href="{% url 'jobs:user_profile_job_create' %}">
+        <div class="card ">
+             <div class="card-body">User Add Job Profile</div> 
+  </div>
+  </a>
+  {% endif %}
+    {% endif %}
+    {% endfor %}
+   </div>
+   <div class="col-sm-5 mt-3 ms-3">
+  <a href="{% url 'jobs:user_skill_job_create' %}">
+  <div class="card">
+ 
+    <div class="card-body">User Add Skills</div> 
+  
+  </div>
+ </a>
+  </div>
+  <div class="col-sm-5 mt-3 ms-3">
+  <a href="">
+  <div class="card ">
+  
+    <div class="card-body">Job Profile</div> 
+   
+  </div>
+  </a>
+  </div>
+   <div class="col-sm-5 mt-3 ms-3">
+  <a href="{% url 'jobs:job_applied_by_user' %}">
+  <div class="card ">
+  
+    <div class="card-body">Applied Company</div> 
+   
+  </div>
+  </a>
+  </div>
+  {% for key, value in jobuserprofile.items %} 
+
+ {% if key == 'user_department' %}
+        {% if value %}
+       
+   <div class="col-sm-5 mt-3 ms-3">
+  <a href="{% url 'jobs:job_create' %}">
+  <div class="card ">
+  
+    <div class="card-body">Hrs Add Jobs</div> 
+   
+  </div>
+  </a>
+  </div>
+ {% endif %}
+       
+ {% endif %}
+ {% endfor %}
+</div>
+
+
+  {% endblock %}
