@@ -8,60 +8,40 @@
 
 </div>
 
- <div class="row container mt-5 ms-5">
- <div class="col-sm-5 mt-3 ms-3">
- <a href="{% url 'jobs:job_list' %}">
-  <div class="card ">
-    
-    <div class="card-body">Job Lists</div> 
-   
-  </div>
+ <div class="row container mt-2 ms-5">
+ <div class="col-sm-5 mt-1 ms-3">
+ <a class="text-decoration-none btn btn-outline-primary btn-lg w-100" href="{% url 'jobs:job_list' %}">
+      Job Lists
   </a>
   </div>
-   <div class="col-sm-5 mt-3 ms-3">
+   <div class="col-sm-5 mt-2 ms-3">
     {% for key, value in jobuserprofile.items %} 
      {% if key == 'user_job_profile' %}
         {% if value %}
-  <a href="{% url 'jobs:user_profile_job_update' slug=value.slug %}">
-<div class="card ">
-             <div class="card-body">User Update Job Profile</div> 
-  </div>
+  <a class="text-decoration-none btn btn-outline-primary btn-lg w-100" href="{% url 'jobs:user_profile_job_update' slug=value.slug %}">
+      User Update Job Profile
   </a>
   {% else %}
-     <a href="{% url 'jobs:user_profile_job_create' %}">
-        <div class="card ">
-             <div class="card-body">User Add Job Profile</div> 
-  </div>
+     <a class="text-decoration-none btn btn-outline-primary btn-lg w-100" href="{% url 'jobs:user_profile_job_create' %}">
+        User Add Job Profile
   </a>
   {% endif %}
     {% endif %}
     {% endfor %}
    </div>
    <div class="col-sm-5 mt-3 ms-3">
-  <a href="{% url 'jobs:user_skill_job_create' %}">
-  <div class="card">
- 
-    <div class="card-body">User Add Skills</div> 
-  
-  </div>
+  <a class="text-decoration-none btn btn-outline-primary btn-lg w-100" href="{% url 'jobs:user_skill_job_create' %}">
+     User Add Skills
  </a>
   </div>
   <div class="col-sm-5 mt-3 ms-3">
-  <a href="">
-  <div class="card ">
-  
-    <div class="card-body">Job Profile</div> 
-   
-  </div>
+  <a class="text-decoration-none btn btn-outline-primary btn-lg w-100" href="">
+  Job Profile
   </a>
   </div>
    <div class="col-sm-5 mt-3 ms-3">
-  <a href="{% url 'jobs:job_applied_by_user' %}">
-  <div class="card ">
-  
-    <div class="card-body">Applied Company</div> 
-   
-  </div>
+  <a class="text-decoration-none btn btn-outline-primary btn-lg w-100" href="{% url 'jobs:job_applied_by_user' %}">
+  Applied Company
   </a>
   </div>
   {% for key, value in jobuserprofile.items %} 
@@ -70,12 +50,8 @@
         {% if value %}
        
    <div class="col-sm-5 mt-3 ms-3">
-  <a href="{% url 'jobs:job_create' %}">
-  <div class="card ">
-  
-    <div class="card-body">Hrs Add Jobs</div> 
-   
-  </div>
+  <a class="text-decoration-none btn btn-outline-primary btn-lg w-100" href="{% url 'jobs:job_create' %}">
+      Hrs Add Jobs
   </a>
   </div>
  {% endif %}
