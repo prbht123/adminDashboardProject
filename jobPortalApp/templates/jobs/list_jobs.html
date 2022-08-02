@@ -1,0 +1,53 @@
+{% extends 'dashboard/index.html' %}{% load widget_tweaks %}
+&nbsp;&nbsp;&nbsp;{% block contentbody %}
+<div class="row container">
+<h4 class="text-center mt-3"> Job Descriptions</h4>
+{% for key, value in jobs.items %} 
+{% if key == 'user_department' %}
+{% if value %}
+
+{% else %}
+<span class="float-end"><a class="btn btn-outline-primary" href="{% url 'jobs:job_applied_by_user' %}">Applied Company</a></span>
+{% endif %}
+{% endif %}
+{% endfor %}
+</div>
+<table class="table">
+<tr>
+    <td>Company Name</td>
+    <td>Job Title</td>
+    <td>Qualification</td>
+    <td>Experiance</td>
+    <td>Salary</td>
+    <td>Location</td>
+    <td>Action</td>
+</tr>
+{% for key, value in jobs.items %} 
+{% if key == 'job_list' %}
+{% for job in value %}
+<tr>
+
+   <td>{{job.company}}</td>
+    <td>{{job.job_title}}</td>
+    <td>{{job.qualification}}</td>
+    <td>{{job.experiance}}</td>
+    <td>{{job.salary}}</td>
+    <td>{{job.address.street}} {{job.address.city}} {{job.address.state}}</td>
+    <td>
+    {% for keys, values in jobs.items %} 
+
+    {% if keys == 'user_department' and values %}
+            <a class="btn btn-outline-primary" href="{% url 'jobs:job_update' slug=job.slug %}">update</a><a class="btn btn-outline-danger" href="{% url 'jobs:job_delete' slug=job.slug %}">delete</a>
+            <a class="btn btn-outline-primary" href="{% url 'jobs:job_applied_users' slug=job.slug %}">Applied Users</a>
+    {% elif keys == 'user_department' %}
+         <a class="btn btn-outline-primary" href="{% url 'jobs:job_apply' slug=job.slug %}">Apply</a><a class="btn btn-outline-primary">Detail</a>
+    {% endif %}
+    {% endfor %}
+    </td>
+
+</tr>
+{% endfor %}
+{% endif %}
+
+{% endfor %}
+{% endblock %}

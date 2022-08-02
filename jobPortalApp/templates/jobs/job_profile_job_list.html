@@ -1,0 +1,60 @@
+{% extends 'dashboard/index.html' %}{% load widget_tweaks %}
+&nbsp;&nbsp;&nbsp;{% block contentbody %}
+
+<div class="row container">
+ <div class="col-sm-4">
+{% if user_department %}
+<a class="btn btn-outline-primary" href="{% url 'jobs:job_create' %}">Add Job</a>
+{% endif %}
+{{user_department}}
+<a class="btn btn-outline-primary" href="{% url 'jobs:user_skill_job_create' %}">Add Skills</a>
+
+
+</div>
+<div class="col-sm-7">
+<a class="btn btn-outline-primary" href="{% url 'jobs:user_profile_job_create' %}">Create Job Profile</a>
+<a class="btn btn-outline-primary" href="{% url 'jobs:job_list' %}">List jobs</a>
+
+</div>
+</div>
+
+
+
+<ul>
+{% for key, value in jobuserprofile.items %} 
+
+ {% if key == 'user_department' %}
+        {% if value %}
+        <a class="btn btn-outline-primary" href="{% url 'jobs:job_create' %}">Add Job</a>
+        {% endif %}
+       
+ {% endif %}
+  
+  {% if key == 'user_job_profile' %}
+  {% if value %}
+  <div class="container">
+  {{value.slug}}
+  <li> User Details</li><span class="float-end"><a class="btn btn-outline-primary" href="{% url 'jobs:user_profile_job_update' slug=value.slug %}">Update Job Profile</a> <a class="btn btn-outline-primary" href="{% url 'jobs:user_job_profile_delete' slug=value.slug %}">Delete Job Profile</a></span>
+   {{value.user}}<br>
+   {{value.secondary_year}} <br>
+   {{value.higer_secondary_year}}<br>
+   {{value.grad_year}}<br>
+   {{value.post_grad_year}}<br>
+   {{value.resume}}<br>
+   </div>
+   {% endif %}
+  {% endif %}
+  {% if key == 'skill' %}
+   {% if value %}
+  <div class="container">
+     <li> User Skills</li>
+      {% for skil in value %}
+        <span class="mt-2" > {{skil.skill}} <a class = "btn btn-outline-primary mt-2" href="{% url 'jobs:user_skill_job_delete' slug=skil.slug %}">Delete Skill</a> </span><br>
+      {% endfor %}
+      </div>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+</ul>
+
+{% endblock %}

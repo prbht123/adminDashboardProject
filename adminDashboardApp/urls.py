@@ -5,6 +5,7 @@ app_name = 'adminDashboardApp'
 
 urlpatterns = [
     path('', views.adminDashboard, name="dashboard"),
+    path('pdf/', views.test, name="test"),
     path('createNewUser/', views.employeeRegisterUser, name='createNewUser'),
     path('employeePersonal/<int:pk>/', views.employeePersonalDetail,
          name='employeePersonalDetail'),

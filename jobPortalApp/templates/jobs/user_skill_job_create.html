@@ -1,0 +1,29 @@
+{% extends 'dashboard/index.html' %}{% load widget_tweaks %}
+&nbsp;&nbsp;&nbsp;{% block contentbody %}
+
+<form action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <p>Add job skills :</p>
+  <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    Skill
+  </label>
+
+  <div class="input-group mb-3">
+    {{form.skill|add_class:"form-control" }}
+  </div>
+
+
+
+  <button class="btn btn-outline-success ml-4 mt-4" type="submit">
+    Create my job Skills
+  </button>
+</form>
+{% endblock %}

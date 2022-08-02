@@ -1,0 +1,248 @@
+{% extends 'dashboard/index.html' %}{% load widget_tweaks %}
+&nbsp;&nbsp;&nbsp;{% block contentbody %}
+
+<form action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <h4 class="text-center mt-2">Create job for Company </h4>
+  <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    Company Name
+  </label>
+
+  <div class="input-group mb-3">
+    {{form.company|add_class:"form-control" }}
+  </div>
+  <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 20px 0 0;
+      display: inline-block;
+    "
+  >
+    Job Title
+  </label>
+  <div class="input-group mb-3">
+    {{ form.job_title|add_class:"form-control" }}
+  </div>
+
+   <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 20px 0 0;
+      display: inline-block;
+    "
+  >
+    Industry Type
+  </label>
+  <div class="input-group mb-3">
+    {{ form.industry_type|add_class:"form-control" }}
+  </div>
+
+   <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 20px 0 0;
+      display: inline-block;
+    "
+  >
+    Employement Type
+  </label>
+  <div class="input-group mb-3">
+    {{ form.employement_type|add_class:"form-control" }}
+  </div>
+
+
+
+ <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 20px 0 0;
+      display: inline-block;
+    "
+  >
+    Qualification
+  </label>
+  <div class="input-group mb-3">
+    {{ form.qualification|add_class:"form-control" }}
+  </div>
+
+
+  <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    Hiring Members
+  </label>
+
+  <div class="input-group mb-3">
+    {{form.hiring_members|add_class:"form-control"}}
+  </div>
+   <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    Experiance 
+  </label>
+
+  <div class="input-group mb-3">
+    {{form.experiance|add_class:"form-control"}}
+  </div>
+   <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    Salary 
+  </label>
+
+  <div class="input-group mb-3">
+    {{form.salary|add_class:"form-control"}}
+  </div>
+   <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    Job Descriptions 
+  </label>
+
+  <div class="input-group mb-3">
+    {{form.job_description|add_class:"form-control"}}
+  </div>
+
+   <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    Address 
+  </label>
+  <div class="row container">
+  <div class="col-sm-6">
+   <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    Street 
+  </label>
+
+  <div class="input-group mb-3">
+    <input type="text" name="street" class="form-control">
+  </div>
+  </div>
+  <div class="col-sm-6">
+  <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    City 
+  </label>
+
+  <div class="input-group mb-3">
+    <input type="text" name="city" class="form-control">
+  </div>
+  </div>
+  <div class="col-sm-6">
+  <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    State 
+  </label>
+
+  <div class="input-group mb-3">
+   <input type="text" name="state" class="form-control">
+  </div>
+  </div>
+  <div class="col-sm-6">
+  <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    Country 
+  </label>
+
+  <div class="input-group mb-3">
+    <input type="text" name="country" class="form-control">
+  </div>
+  </div>
+  <div class="col-sm-6">
+  <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    Pin code 
+  </label>
+
+  <div class="input-group mb-3">
+    <input type="text" name="pin_code" class="form-control">
+  </div>
+  </div>
+  </div>
+  <button class="btn btn-outline-success ml-4 mt-4" type="submit">
+    Create job 
+  </button>
+</form>
+{% endblock %}

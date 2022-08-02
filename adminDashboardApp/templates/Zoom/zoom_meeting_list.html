@@ -1,18 +1,49 @@
 {% extends 'dashboard/index.html' %}{% load widget_tweaks %}
-&nbsp;&nbsp;&nbsp;{% block contentbody %}
-<div class="row container">
- <h4 class="mb-5 mt-2"> Meeting Details </h4>
+{% block style %}
+<style>
+      h3{
+      text-transform: capitalize;
+      }
+      .badge{
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      padding: 12px 15px;
+      border-radius: 0 0 0 26px;
+      font-size: 14px;
+      }
+      .card{
+      border:0px;
+      height: 100%;
+      }
+      .card-title{
+      font-weight: bold;
+      }
+      </style>
 
-{% for meeting in zoommeetings_list %}
-  <div class="col-sm-4 ">
-  <div class="card">
-        <div class="card-header">{{meeting.meeting_topic}}</div>
-        <div class="card-body">
-            Date And Time : {{meeting.meeting_date}} - {{meeting.meeting_time}} <br>Duration : {{meeting.meeting_duration}} <br> Link : {{meeting.meeting_zoom_link}}
-            <hr><a class="btn btn-outline-primary" href="{% url 'adminDjango:zoom_meeting_user_detail' pk=meeting.id %}">Details</a>
-         </div>
-    </div>
-  </div>
-{% endfor %}
-</div>
+
+{% endblock %}
+&nbsp;&nbsp;&nbsp;{% block contentbody %}
+
+<div class="container  mt-5 mb-5">
+        <h2 class="mb-5 mt-2 text-primary"> Meeting Details </h2>
+      
+        <div class="row m-0">
+          {% for meeting in zoommeetings_list %}
+            <div class="col-sm-4 mb-4">
+              <div class="card">
+                <div class="card-body">
+                  <span class="badge bg-warning">{{ forloop.counter }}</span>
+                  <h3 class="card-title text-primary">{{meeting.meeting_topic}}</h3>
+                  <h6 class="card-subtitle mb-2 text-muted">Markup Language</h6>
+                  <p class="card-text">The HyperText Markup Language, or HTML is the standard markup language for documents.</p>
+                  <a class="btn btn-outline-primary" href="{% url 'adminDjango:zoom_meeting_user_detail' pk=meeting.id %}">Details</a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+
 {% endblock %}

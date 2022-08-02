@@ -1,0 +1,101 @@
+{% extends 'dashboard/index.html' %}{% load widget_tweaks %}
+&nbsp;&nbsp;&nbsp;{% block contentbody %}
+
+<form action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <p>Create job profiles :</p>
+  <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    Secondary Year
+  </label>
+
+  <div class="input-group mb-3">
+    {{form.secondary_year|add_class:"form-control" }}
+  </div>
+  <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 20px 0 0;
+      display: inline-block;
+    "
+  >
+    Higer Secondary Year
+  </label>
+  <div class="input-group mb-3">
+    {{ form.higer_secondary_year|add_class:"form-control" }}
+  </div>
+   <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 20px 0 0;
+      display: inline-block;
+    "
+  >
+    Graduation Year
+  </label>
+  <div class="input-group mb-3">
+    {{ form.grad_year|add_class:"form-control" }}
+  </div>
+
+ <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 20px 0 0;
+      display: inline-block;
+    "
+  >
+    Post Graduation Year
+  </label>
+  <div class="input-group mb-3">
+    {{ form.post_grad_year|add_class:"form-control" }}
+  </div>
+
+
+  <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    Looking For
+  </label>
+
+  <div class="input-group mb-3">
+    {{form.looking_for|add_class:"form-control"}}
+  </div>
+   <label
+    style="
+      font-family: Source Sans Pro;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 30px 0 0;
+      display: inline-block;
+    "
+  >
+    Resume
+  </label>
+
+  <div class="input-group mb-3">
+    {{form.resume|add_class:"form-control"}}
+  </div>
+  <button class="btn btn-outline-success ml-4 mt-4" type="submit">
+    Create my job profile
+  </button>
+</form>
+{% endblock %}
