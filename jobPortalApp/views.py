@@ -186,7 +186,10 @@ class jobDeleteView(DeleteView):
 
 
 def jobAppliedCreateView(request, slug):
-    user = User.objects.get(username=request.user.username)
+    try:
+        user = User.objects.get(username=request.user.username)
+    except:
+        return redirect('account:signin')
     job = JobDetails.objects.get(slug=slug)
     data = AppliedJobs.objects.filter(user=user, job=job)
 
